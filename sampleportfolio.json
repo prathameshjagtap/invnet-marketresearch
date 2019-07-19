@@ -1,0 +1,7 @@
+{
+    "values":[
+    { "x": "Finance", "y": 35 },
+    { "x": "Technology", "y": 45 },
+    { "x": "Other", "y": 25 }
+    ]
+}
