@@ -10,6 +10,8 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-144372078-1');
+
+		
 	</script>
 
 	<!-- Hotjar Tracking Code for investork.com -->
@@ -92,7 +94,7 @@
 						<div class="buttons flex-row d-flex">
 							<i class="fa fa-apple" aria-hidden="true"></i>
 							<div class="desc">
-								<a href="#signupforbeta">
+								<a href="#signupforbeta" onclick="logToLambda('Apple Sign up!')">
 									<p>
 										<span>Sign up</span>
 									</p>
@@ -102,7 +104,7 @@
 						<div class="buttons dark flex-row d-flex">
 							<i class="fa fa-android" aria-hidden="true"></i>
 							<div class="desc">
-								<a href="#signupforbeta">
+								<a href="#signupforbeta" onclick="logToLambda('Andriod Sign up!')">
 									<p>
 										<span>Sign up</span>
 									</p>
@@ -271,7 +273,7 @@
 							<input class="form-control" name="email" placeholder="Your Email Address"
 								onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
 								required="" type="email">
-							<button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
+							<button class="click-btn btn btn-default"  onclick="logToLambda('Sign up!')"><span class="lnr lnr-arrow-right"></span></button>
 
 							<div class="info" id="signupinfo"></div>
 						</form>
@@ -313,6 +315,15 @@
 	<script src="js/waypoints.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+		$( document ).ready(function() {
+		    logToLambda("Some one landed")
+		});
+
+		function logToLambda(str) {
+			$.post( "https://28utcoqzx8.execute-api.us-east-1.amazonaws.com/default/LogCollector?log=some shit", { context: "Investor", data: str, level: "debug" } );
+		}
+	</script>
 
 </body>
 
